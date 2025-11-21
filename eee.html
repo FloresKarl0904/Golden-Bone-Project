@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Appointment Booking</title>
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #bbb;
+            padding: 20px;
+            text-align: center;
+        }
+        .header .nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .header .nav button {
+            padding: 10px;
+            background-color: #888;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+        .left-panel, .right-panel {
+            width: 48%;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .left-panel form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .left-panel input, .left-panel select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .right-panel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 300px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: white;
+        }
+        .right-panel input[type="text"] {
+            font-size: 18px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .right-panel button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #888;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Pet Appointment Booking</h1>
+        <div class="nav">
+            <button>Home</button>
+            <button>Gallery</button>
+            <button>Pricing</button>
+            <button>Review</button>
+            <button>Products</button>
+            <button>Support</button>
+            <button>About</button>
+            <button>Contact</button>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="left-panel">
+            <h2>Book Your Appointment</h2>
+            <form>
+                <label for="pet-name">Pet Name:</label>
+                <input type="text" id="pet-name" placeholder="Enter pet name">
+
+                <label for="pet-size">Pet Size:</label>
+                <select id="pet-size">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
+                </select>
+
+                <label for="package">Package:</label>
+                <select id="package">
+                    <option value="basic">Basic</option>
+                    <option value="premium">Premium</option>
+                    <option value="deluxe">Deluxe</option>
+                </select>
+
+                <label for="payment">Mode of Payment:</label>
+                <select id="payment">
+                    <option value="credit">Credit Card</option>
+                    <option value="paypal">PayPal</option>
+                    <option value="cash">Cash</option>
+                </select>
+
+                <button type="submit">Book Appointment</button>
+            </form>
+        </div>
+
+        <div class="right-panel">
+            <div>
+                <label for="appointment-date">Pick a Date:</label>
+                <input type="text" id="appointment-date" name="appointment-date" placeholder="Select a date">
+                <button type="button">Confirm Schedule</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Flatpickr JS -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script>
+        // Initialize Flatpickr on the date input field
+        flatpickr("#appointment-date", {
+            minDate: "today", // Disable past dates
+            dateFormat: "Y-m-d", // Set date format
+        });
+    </script>
+</body>
+</html>
